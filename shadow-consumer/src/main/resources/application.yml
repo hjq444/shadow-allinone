@@ -1,0 +1,26 @@
+server:
+  port: 81
+
+spring:
+  application:
+    name: shadow-consumer-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/shadow_allinone?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+    instance:
+        instance-id: shadow-consumer-service
+        #访问路径可以显示IP地址
+        prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true

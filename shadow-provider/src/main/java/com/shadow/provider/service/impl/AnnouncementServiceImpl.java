@@ -6,7 +6,6 @@ import com.shadow.provider.dao.AnnouncementMapper;
 import com.shadow.provider.model.data.Announcement;
 import com.shadow.provider.model.param.announcement.AnnouncementUpdateF;
 import com.shadow.provider.service.IAnnouncementService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

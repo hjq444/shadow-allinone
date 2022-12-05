@@ -1,7 +1,7 @@
-package com.shadow.consumer.provider;
+package com.shadow.consumer.controller;
 
+import com.shadow.consumer.service.FeignService;
 import com.shadow.provider.model.param.announcement.AnnouncementUpdateF;
-import com.shadow.consumer.service.AnnouncementFeignService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AnnouncementController {
 
     @Autowired
-    private AnnouncementFeignService announcementService;
+    private FeignService feignService;
 
     @ApiOperation(value = "公告管理新增或保存", notes = "公告管理新增或保存", response = Boolean.class)
     @PostMapping("/saveOrUpdate")
     public Boolean saveOrUpdate(@RequestBody AnnouncementUpdateF updateF) {
-        return announcementService.saveOrUpdate(updateF);
+        return feignService.saveOrUpdate(updateF);
     }
 }

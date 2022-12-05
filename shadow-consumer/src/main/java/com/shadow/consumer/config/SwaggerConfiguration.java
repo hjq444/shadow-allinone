@@ -19,10 +19,9 @@ import java.util.List;
 
 @Configuration
 @EnableSwagger2
-@ConditionalOnProperty(value = "uama.swagger.enable", havingValue = "true")
 public class SwaggerConfiguration {
 
-    public static final String CONTROLLER_PACKAGE = "com.shadow.web.web";
+    public static final String CONTROLLER_PACKAGE = "com.shadow.consumer.controller";
 
     @Bean
     public Docket api() {

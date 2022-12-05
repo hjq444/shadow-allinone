@@ -1,8 +1,8 @@
-package com.shadow.consumer.provider;
+package com.shadow.consumer.controller;
 
 import com.shadow.api.entities.CommonResult;
 import com.shadow.api.entities.Payment;
-import com.shadow.consumer.service.PaymentFeignService;
+import com.shadow.consumer.service.FeignService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,21 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
-public class OrderFeignController
+public class OrderController
 {
     @Autowired
-    private PaymentFeignService paymentFeignService;
+    private FeignService feignService;
 
     @GetMapping(value = "/consumer/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id)
     {
-        return paymentFeignService.getPaymentById(id);
+        return feignService.getPaymentById(id);
     }
 
     @GetMapping(value = "/consumer/payment/feign/timeout")
     public String paymentFeignTimeout()
     {
         // OpenFeign客户端一般默认等待1秒钟
-        return paymentFeignService.paymentFeignTimeout();
+        return feignService.paymentFeignTimeout();
     }
 }

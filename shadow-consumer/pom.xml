@@ -56,7 +56,7 @@
         </dependency>
         <dependency>
             <groupId>com.shadow</groupId>
-            <artifactId>shadow-provider-payment</artifactId>
+            <artifactId>shadow-provider</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
