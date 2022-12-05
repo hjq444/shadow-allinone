@@ -11,9 +11,9 @@
 
     <modules>
         <module>shadow-api-commons</module>
-        <module>shadow-provider-payment</module>
+        <module>shadow-provider</module>
         <module>shadow-eureka-server</module>
-        <module>shadow-consumer-order</module>
+        <module>shadow-consumer</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
