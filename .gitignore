@@ -1,0 +1,13 @@
+target/
+.settings/
+.classpath
+bin/
+.mymetadata
+.project
+.externalToolBuilders/
+.tern-project
+*.bak
+
+#IDEA
+.idea
+*.iml
