@@ -9,6 +9,8 @@ import com.shadow.provider.service.IAnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class AnnouncementServiceImpl extends ServiceImpl<AnnouncementMapper, Announcement> implements IAnnouncementService {
 
@@ -18,7 +20,11 @@ public class AnnouncementServiceImpl extends ServiceImpl<AnnouncementMapper, Ann
     @Override
     public Boolean saveOrUpdate(AnnouncementUpdateF form) {
         Announcement announcement = BeanCastUtil.castBean(form, Announcement.class);
-        announcementMapper.insert(announcement);
+        if (Objects.isNull(announcement.getId())){
+            announcementMapper.insert(announcement);
+        } else {
+            announcementMapper.updateById(announcement);
+        }
         return true;
     }
 }
